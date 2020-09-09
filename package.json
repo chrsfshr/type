@@ -1,39 +1,40 @@
 {
-  "_from": "@carbon/type@10.15.0",
-  "_id": "@carbon/type@10.15.0",
-  "_inBundle": false,
-  "_integrity": "sha512-BXAGomXHjWhA8pWZMuAhLYBh3SzbaYQsm19oWYJWDxNUm2c9IIIWv7uD/uGagvmzFHqYOKorttuL8Qn3Z9jh7A==",
-  "_location": "/@carbon/type",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "@carbon/type@10.15.0",
-    "name": "@carbon/type",
-    "escapedName": "@carbon%2ftype",
-    "scope": "@carbon",
-    "rawSpec": "10.15.0",
-    "saveSpec": null,
-    "fetchSpec": "10.15.0"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
+  "name": "@carbon/type",
+  "description": "Typography for digital and software products using the Carbon Design System",
+  "version": "10.15.0",
+  "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "repository": "https://github.com/carbon-design-system/carbon/tree/master/packages/type",
+  "bugs": "https://github.com/carbon-design-system/carbon/issues",
+  "files": [
+    "es",
+    "lib",
+    "scss",
+    "src",
+    "umd"
   ],
-  "_resolved": "https://github.com/chrsfshr/type.git",
-  "_shasum": "1b041cbf1a2bdd3ec3bf71ddaf148a396f99bb63",
-  "_spec": "@carbon/type@10.15.0",
-  "_where": "/Users/c.fisher-ibm/q-site",
-  "bugs": {
-    "url": "https://github.com/carbon-design-system/carbon/issues"
+  "keywords": [
+    "eyeglass-module",
+    "ibm",
+    "elements",
+    "carbon",
+    "carbon-elements",
+    "carbon-design-system",
+    "components",
+    "react"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
-  "bundleDependencies": false,
+  "scripts": {
+    "build": "yarn clean && bundler bundle src/index.js --name CarbonType && bundler sassdoc \"scss/**/*.scss\" -i \"**/{_inlined,vendor}**\" && bundler inline && bundler check \"scss/*.scss\"",
+    "clean": "rimraf css es lib umd scss/_inlined scss/vendor"
+  },
   "dependencies": {
     "@carbon/import-once": "^10.3.0",
     "@carbon/layout": "^10.13.0"
   },
-  "deprecated": false,
-  "description": "Typography for digital and software products using the Carbon Design System",
   "devDependencies": {
     "@carbon/bundler": "^10.9.0",
     "@carbon/test-utils": "^10.11.0",
@@ -45,39 +46,5 @@
     "name": "@carbon/type",
     "sassDir": "scss",
     "needs": "^1.3.0"
-  },
-  "files": [
-    "es",
-    "lib",
-    "scss",
-    "src",
-    "umd"
-  ],
-  "gitHead": "1ddaf4a45fd03d39ca695505d0c764b5879c924b",
-  "keywords": [
-    "eyeglass-module",
-    "ibm",
-    "elements",
-    "carbon",
-    "carbon-elements",
-    "carbon-design-system",
-    "components",
-    "react"
-  ],
-  "license": "Apache-2.0",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "name": "@carbon/type",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/carbon-design-system/carbon/tree/master/packages/type"
-  },
-  "scripts": {
-    "build": "yarn clean && bundler bundle src/index.js --name CarbonType && bundler sassdoc \"scss/**/*.scss\" -i \"**/{_inlined,vendor}**\" && bundler inline && bundler check \"scss/*.scss\"",
-    "clean": "rimraf css es lib umd scss/_inlined scss/vendor"
-  },
-  "version": "10.15.0"
+  }
 }
